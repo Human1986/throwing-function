@@ -287,7 +287,7 @@ class ThrowingFunctionTest {
 
   //region Reflection utilities
   private static Class<?> findClass() {
-    return assertDoesNotThrow(() -> Class.forName("edu.epam.fop.lambdas.ThrowingFunction"),
+    return assertDoesNotThrow(() -> Class.forName("ThrowingFunction"),
         FI_CLASS_NAME + " does not exist");
   }
 
