@@ -8,7 +8,7 @@ Duration: _15 minutes_
 
 ## Description
 
-In this task, you'll implement the so-called `ThrowingFunction`.
+In this task, you'll implement the so-called `edu.epam.fop.lambdas.ThrowingFunction`.
 It's a variant of a `java.util.function.Function`, except for it may throw
 an exception. It might be really helpful when you want to pass a function
 to some method, but the underlying code throws some checked exception
@@ -27,7 +27,7 @@ to some API that accepts only non-throwing ones (e.g. Stream API).
 ## Requirements
 
 Let's go through the requirements of this task:
-* `ThrowingFunction` interface must be declared under `edu.epam.fop.lambdas` package
+* `edu.epam.fop.lambdas.ThrowingFunction` interface must be declared under `edu.epam.fop.lambdas` package
 * It must be a generic type with generalized:
     * Argument type
     * Return type
@@ -35,24 +35,24 @@ Let's go through the requirements of this task:
 * It must have an abstract `apply` method, which accepts one argument,
   of one generic type and returns an instance of another generic type
 * `apply` method must be able to throw any exception up to `Throwable`
-* It must have a static method for wrapping `ThrowingFunction` into `Function`,
+* It must have a static method for wrapping `edu.epam.fop.lambdas.ThrowingFunction` into `Function`,
   named `quiet`
 * `quiet` method must be generic too
 * `quiet` method must return `null` when `null` is passed
 * `quiet` method must not throw any exception
 * The returned by `quiet` method `Function` must wrap any occurred
-  in `ThrowingFunction` exception into `RuntimeException` without hiding the cause
+  in `edu.epam.fop.lambdas.ThrowingFunction` exception into `RuntimeException` without hiding the cause
 * The returned by `quiet` method `Function` must work
-  just as `ThrowingFunction`, when no error has occurred
-* generic types of `ThrowingFunction` and `Function` must correspond to each other
+  just as `edu.epam.fop.lambdas.ThrowingFunction`, when no error has occurred
+* generic types of `edu.epam.fop.lambdas.ThrowingFunction` and `Function` must correspond to each other
 * Generic types must not have any boundaries if possible
-* `ThrowingFunction` must be annotated with `@FunctionalInterface`
+* `edu.epam.fop.lambdas.ThrowingFunction` must be annotated with `@FunctionalInterface`
 
 ## Examples
 
 ### Variable declaration
 ```java
-ThrowingFunction<String, Integer, IOException> ioFunc = new ThrowingFunction<>() {
+edu.epam.fop.lambdas.ThrowingFunction<String, Integer, IOException> ioFunc = new edu.epam.fop.lambdas.ThrowingFunction<>() {
   @Override
   Integer apply(String fileName) throws IOException {
     return IOUtils.getSize(fileName);
@@ -72,6 +72,6 @@ catch (IOException e) {
 
 ### Silencing function
 ```java
-Function<String, Integer> func = ThrowingFunction.quiet(ioFunc);
+Function<String, Integer> func = edu.epam.fop.lambdas.ThrowingFunction.quiet(ioFunc);
 func.apply("big-file.csv");
 ```

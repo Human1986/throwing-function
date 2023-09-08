@@ -1,3 +1,5 @@
+package edu.epam.fop.lambdas;
+
 import java.util.function.Function;
 
 @FunctionalInterface

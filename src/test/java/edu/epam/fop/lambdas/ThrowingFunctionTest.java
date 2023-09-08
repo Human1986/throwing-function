@@ -22,11 +22,11 @@ import java.util.function.Function;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("ThrowingFunction test")
+@DisplayName("edu.epam.fop.lambdas.ThrowingFunction test")
 class ThrowingFunctionTest {
 
   //region Constants
-  private static final String FI_CLASS_NAME = "ThrowingFunction";
+  private static final String FI_CLASS_NAME = "edu.epam.fop.lambdas.ThrowingFunction";
   private static final String FI_APPLY_METHOD_NAME = FI_CLASS_NAME + ".apply";
   private static final String FI_APPLY_RETURN_NAME = FI_CLASS_NAME + ".apply (return type)";
   private static final String FI_APPLY_PARAMETER_NAME = FI_CLASS_NAME + ".apply (parameter)";
@@ -36,28 +36,28 @@ class ThrowingFunctionTest {
   private static final String FI_QUIET_PARAMETER_NAME = FI_CLASS_NAME + ".quiet (parameter)";
   //endregion
 
-  //region ThrowingFunction type tests
-  @DisplayName("Tests that ThrowingFunction exist")
+  //region edu.epam.fop.lambdas.ThrowingFunction type tests
+  @DisplayName("Tests that edu.epam.fop.lambdas.ThrowingFunction exist")
   @Test
   void shouldExist() {
     findClass();
   }
 
-  @DisplayName("Tests that ThrowingFunction is an interface")
+  @DisplayName("Tests that edu.epam.fop.lambdas.ThrowingFunction is an interface")
   @Test
   void shouldBeAnInterface() {
     Class<?> fiClass = findClass();
-    assertTrue(fiClass.isInterface(), "ThrowingFunction must be an interface");
+    assertTrue(fiClass.isInterface(), "edu.epam.fop.lambdas.ThrowingFunction must be an interface");
   }
 
-  @DisplayName("Tests that ThrowingFunction is properly generalized")
+  @DisplayName("Tests that edu.epam.fop.lambdas.ThrowingFunction is properly generalized")
   @Test
   void shouldBeGeneralized() {
     Class<?> fiClass = findClass();
     assertThatTypeParametersValidity(FI_CLASS_NAME, fiClass.getTypeParameters());
   }
 
-  @DisplayName("Tests that ThrowingFunction is annotated with @FunctionalInterface")
+  @DisplayName("Tests that edu.epam.fop.lambdas.ThrowingFunction is annotated with @FunctionalInterface")
   @Test
   void shouldBeAnnotatedWithFunctionalInterface() {
     Class<?> fiClass = findClass();
@@ -68,14 +68,14 @@ class ThrowingFunctionTest {
   }
   //endregion
 
-  //region ThrowingFunction.apply tests
-  @DisplayName("Tests that ThrowingFunction has method apply")
+  //region edu.epam.fop.lambdas.ThrowingFunction.apply tests
+  @DisplayName("Tests that edu.epam.fop.lambdas.ThrowingFunction has method apply")
   @Test
   void shouldHaveMethodApply() {
     findApplyMethod();
   }
 
-  @DisplayName("Tests that ThrowingFunction.apply has correct modifiers")
+  @DisplayName("Tests that edu.epam.fop.lambdas.ThrowingFunction.apply has correct modifiers")
   @Test
   void shouldApplyBeAbstract() {
     Method method = findApplyMethod();
@@ -85,7 +85,7 @@ class ThrowingFunctionTest {
         FI_APPLY_METHOD_NAME + " must be public");
   }
 
-  @DisplayName("Tests that ThrowingFunction.apply throws a generalized exception")
+  @DisplayName("Tests that edu.epam.fop.lambdas.ThrowingFunction.apply throws a generalized exception")
   @Test
   void shouldThrowAnException() {
     Method method = findApplyMethod();
@@ -100,7 +100,7 @@ class ThrowingFunctionTest {
         FI_APPLY_EXCEPTION_NAME + " must be generalized");
   }
 
-  @DisplayName("Tests that ThrowingFunction.apply has properly generalized parameters")
+  @DisplayName("Tests that edu.epam.fop.lambdas.ThrowingFunction.apply has properly generalized parameters")
   @Test
   void shouldBeProperlyGeneralizedParametersMethod() {
     Method method = findApplyMethod();
@@ -114,7 +114,7 @@ class ThrowingFunctionTest {
         FI_APPLY_PARAMETER_NAME + " must be generalized");
   }
 
-  @DisplayName("Tests that ThrowingFunction.apply has properly generalized return type")
+  @DisplayName("Tests that edu.epam.fop.lambdas.ThrowingFunction.apply has properly generalized return type")
   @Test
   void shouldBeProperlyGeneralizedReturnType() {
     Method method = findApplyMethod();
@@ -126,7 +126,7 @@ class ThrowingFunctionTest {
         FI_APPLY_RETURN_NAME + " must be generalized");
   }
 
-  @DisplayName("Tests that all ThrowingFunction.apply generic types are different")
+  @DisplayName("Tests that all edu.epam.fop.lambdas.ThrowingFunction.apply generic types are different")
   @Test
   void shouldHaveDifferentGenericTypes() {
     Method method = findApplyMethod();
@@ -137,7 +137,7 @@ class ThrowingFunctionTest {
     assertThatAllGenericTypesAreDifferent(FI_CLASS_NAME, types);
   }
 
-  @DisplayName("Tests that ThrowingFunction.apply does not have any method type variable")
+  @DisplayName("Tests that edu.epam.fop.lambdas.ThrowingFunction.apply does not have any method type variable")
   @Test
   void shouldApplyMethodNotBeSelfGeneralized() {
     Method method = findApplyMethod();
@@ -147,14 +147,14 @@ class ThrowingFunctionTest {
   }
   //endregion
 
-  //region ThrowingFunction.quiet tests
-  @DisplayName("Tests that ThrowingFunction has quiet method")
+  //region edu.epam.fop.lambdas.ThrowingFunction.quiet tests
+  @DisplayName("Tests that edu.epam.fop.lambdas.ThrowingFunction has quiet method")
   @Test
   void shouldHaveQuietMethod() {
     findQuietMethod();
   }
 
-  @DisplayName("Tests that ThrowingFunction.quiet has correct modifiers")
+  @DisplayName("Tests that edu.epam.fop.lambdas.ThrowingFunction.quiet has correct modifiers")
   @Test
   void shouldQuietMethodBeStatic() {
     Method method = findQuietMethod();
@@ -165,7 +165,7 @@ class ThrowingFunctionTest {
         FI_QUIET_METHOD_NAME + " must be public");
   }
 
-  @DisplayName("Tests that ThrowingFunction.quiet has right argument")
+  @DisplayName("Tests that edu.epam.fop.lambdas.ThrowingFunction.quiet has right argument")
   @Test
   void shouldQuietMethodHaveThrowingFunctionAsParameter() {
     Class<?> fiClass = findClass();
@@ -177,7 +177,7 @@ class ThrowingFunctionTest {
         FI_QUIET_PARAMETER_NAME + " must be a " + FI_CLASS_NAME);
   }
 
-  @DisplayName("Tests that ThrowingFunction.quiet has right return type")
+  @DisplayName("Tests that edu.epam.fop.lambdas.ThrowingFunction.quiet has right return type")
   @Test
   void shouldQuietMethodHaveFunctionAsReturnType() {
     Method method = findQuietMethod();
@@ -186,7 +186,7 @@ class ThrowingFunctionTest {
         FI_QUIET_RETURN_NAME + " must be a Function");
   }
 
-  @DisplayName("Tests that ThrowingFunction.quiet does not throw anything")
+  @DisplayName("Tests that edu.epam.fop.lambdas.ThrowingFunction.quiet does not throw anything")
   @Test
   void shouldQuietMethodNotThrowAnything() {
     Method method = findQuietMethod();
@@ -196,14 +196,14 @@ class ThrowingFunctionTest {
     }
   }
 
-  @DisplayName("Tests that ThrowingFunction.quiet has its own valid type parameters")
+  @DisplayName("Tests that edu.epam.fop.lambdas.ThrowingFunction.quiet has its own valid type parameters")
   @Test
   void shouldQuietMethodHaveItsOwnTypeParameters() {
     Method method = findQuietMethod();
     assertThatTypeParametersValidity(FI_QUIET_METHOD_NAME, method.getTypeParameters());
   }
 
-  @DisplayName("Tests that ThrowingFunction.quiet is properly generalized")
+  @DisplayName("Tests that edu.epam.fop.lambdas.ThrowingFunction.quiet is properly generalized")
   @Test
   void shouldQuietMethodBeProperlyGeneralized() {
     Class<?> fiClass = findClass();
@@ -230,16 +230,16 @@ class ThrowingFunctionTest {
   }
   //endregion
 
-  //region ThrowingFunction.quiet functional tests
+  //region edu.epam.fop.lambdas.ThrowingFunction.quiet functional tests
 
-  @DisplayName("Tests that ThrowingFunction.quiet returns null when null is passed")
+  @DisplayName("Tests that edu.epam.fop.lambdas.ThrowingFunction.quiet returns null when null is passed")
   @Test
   void shouldReturnNullWhenNullIsPassed() {
     Object quietFunction = invokeQuiet(null);
     assertNull(quietFunction, FI_QUIET_METHOD_NAME + " must return null when null is passed");
   }
 
-  @DisplayName("Tests that ThrowingFunction.quiet works correctly when nothing was thrown")
+  @DisplayName("Tests that edu.epam.fop.lambdas.ThrowingFunction.quiet works correctly when nothing was thrown")
   @Test
   @SuppressWarnings({"unchecked", "rawtypes"})
   void shouldWorkCorrectlyWhenNothingWasThrown() {
@@ -257,7 +257,7 @@ class ThrowingFunctionTest {
     assertEquals("argument", result);
   }
 
-  @DisplayName("Tests that ThrowingFunction.quiet resulting Function "
+  @DisplayName("Tests that edu.epam.fop.lambdas.ThrowingFunction.quiet resulting Function "
       + "throws unchecked when error occurred")
   @Test
   @SuppressWarnings({"rawtypes", "unchecked"})
@@ -287,7 +287,7 @@ class ThrowingFunctionTest {
 
   //region Reflection utilities
   private static Class<?> findClass() {
-    return assertDoesNotThrow(() -> Class.forName("ThrowingFunction"),
+    return assertDoesNotThrow(() -> Class.forName("edu.epam.fop.lambdas.ThrowingFunction"),
         FI_CLASS_NAME + " does not exist");
   }
 
@@ -303,7 +303,7 @@ class ThrowingFunctionTest {
   private static Method findQuietMethod() {
     Class<?> fiClass = findClass();
     Method method = assertDoesNotThrow(() -> fiClass.getDeclaredMethod("quiet", fiClass),
-        FI_CLASS_NAME + " must have a method named quiet (ThrowingFunction -> Function)");
+        FI_CLASS_NAME + " must have a method named quiet (edu.epam.fop.lambdas.ThrowingFunction -> Function)");
     method.setAccessible(true);
     return method;
   }
